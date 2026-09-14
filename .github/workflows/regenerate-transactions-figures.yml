@@ -1,0 +1,51 @@
+name: Regenerate Transactions Figures
+
+on:
+  push:
+    branches:
+      - paper-final-reconciliation-20260909
+    paths:
+      - scripts/regenerate_transactions_figures.py
+  workflow_dispatch:
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: paper-final-reconciliation-20260909
+          submodules: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scientific dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+      - name: Regenerate Figures 1-6
+        run: python scripts/generate_final_figures_1_6.py
+
+      - name: Regenerate Figures 7-12
+        run: python scripts/generate_final_figures_7_12.py
+
+      - name: Apply figure reconciliation pass
+        run: python scripts/regenerate_transactions_figures.py
+
+      - name: Verify figure inventory
+        run: |
+          test "$(find results/paper_final_verified_20260908/figures -maxdepth 1 -type f -name 'fig*.pdf' | wc -l)" -eq 12
+          test "$(find results/paper_final_verified_20260908/figures -maxdepth 1 -type f -name 'fig*.png' | wc -l)" -eq 12
+
+      - name: Commit regenerated figures
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/paper_final_verified_20260908/figures
+          git commit -m "Regenerate reconciled publication figures" || exit 0
+          git push origin HEAD:paper-final-reconciliation-20260909

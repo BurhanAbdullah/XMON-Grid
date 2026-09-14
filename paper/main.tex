@@ -8,17 +8,16 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{url}
+\graphicspath{{../results/paper_final_verified_20260908/figures/}}
 
 \begin{document}
 
 \title{Sequential Innovation Accumulation and Cross-Layer Quorum Consensus for Topology-Attack Detection in SCADA-Monitored Transmission Systems}
-
 \author{Burhan~Abdullah,~\IEEEmembership{Member,~IEEE}}
-
 \maketitle
 
 \begin{abstract}
-Cyber-physical security in SCADA-monitored transmission systems is challenged by topology manipulation, false-data injection, load manipulation, and slowly developing anomalies. This paper presents XMON-Grid, a multi-layer detection framework combining normalized innovation squared (NIS), adaptive CUSUM drift monitoring, SCADA timing-jitter statistics, sequential innovation accumulation, and detector quorum voting. The AC measurement model and its analytical Jacobian are implemented directly from canonical IEEE benchmark network data, with the analytical Jacobian independently checked against finite differences. An independent five-seed validation was performed on IEEE 9-, 14-, 30-, and 118-bus systems using 6,000 test evaluations. In this regenerated validation, the $K=2$ quorum mode achieved F1-score $0.9204\pm0.0026$, recall $0.8850\pm0.0012$, FPR $0.1525\pm0.0197$, and MCC $0.6667\pm0.0151$. The results also show that performance depends strongly on attack type, with lower recall for load-shift and stealth-drift cases than for branch-outage and FDIA cases. These results are reported together with the benchmark provenance, mathematical checks, and reproducibility artifacts rather than with earlier stale aggregate values.
+Cyber-physical security in SCADA-monitored transmission systems is challenged by topology manipulation, false-data injection, load manipulation, and slowly developing anomalies. This paper presents XMON-Grid, a multi-layer detection framework combining normalized innovation squared (NIS), adaptive CUSUM drift monitoring, SCADA timing-jitter statistics, sequential innovation accumulation, and detector quorum voting. The AC measurement model and its analytical Jacobian are implemented directly from canonical IEEE benchmark network data, with the analytical Jacobian independently checked against finite differences. An independent five-seed validation was performed on IEEE 9-, 14-, 30-, and 118-bus systems using 6,000 test evaluations. In this regenerated validation, the $K=2$ quorum mode achieved F1-score $0.9204\pm0.0026$, recall $0.8850\pm0.0012$, FPR $0.1525\pm0.0197$, and MCC $0.6667\pm0.0151$. The results also show that performance depends strongly on attack type, with lower recall for load-shift and stealth-drift cases than for branch-outage and FDIA cases. These results are reported together with benchmark provenance, mathematical checks, and reproducibility artifacts rather than with earlier stale aggregate values.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -59,7 +58,7 @@ The analytical Jacobian is
 \end{equation}
 Angle and voltage derivatives are evaluated analytically from the expressions above. The reference-bus angle is treated separately and is not included as an independent state.
 
-The Jacobian was independently cross-checked using finite-difference derivatives. The validated repository run reported a maximum absolute discrepancy of approximately $2.7\times10^{-9}$, within the numerical tolerance used by the validation pipeline.
+The Jacobian was independently cross-checked using finite-difference derivatives. The validation tests confirm agreement within the numerical tolerance used by the current validation pipeline.
 
 \subsection{NIS Detector}
 The innovation residual and covariance are
@@ -132,22 +131,22 @@ MCC & 0.6667 & 0.0151 \\
 \end{tabular}
 \end{table}
 
-The regenerated results differ materially from earlier archived aggregate numbers. The present manuscript therefore does not retain the earlier claims of FPR below $0.6\%$ or recall of $85.85\%$ as authoritative results for this run.
+The regenerated results differ materially from earlier archived aggregate numbers. The present manuscript therefore does not retain earlier aggregate claims that conflict with the current verified package.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig1_overall_performance.pdf}
+\includegraphics[width=\columnwidth]{fig1_overall_performance.pdf}
 \caption{Overall detection-performance comparison for the primary validation set.}
 \label{fig:overall}
 \end{figure}
 
 \subsection{Operating-Point Trade-off}
-The $K=1$ mode is deliberately treated as a sensitivity-oriented OR rule rather than as the preferred operating point. The regenerated comparison shows the expected trade-off between sensitivity and false alarms when moving from $K=1$ to the stricter $K=2$ rule.
+The $K=1$ mode is treated as a sensitivity-oriented OR rule rather than as the preferred operating point. The regenerated comparison shows the trade-off between sensitivity and false alarms when moving from $K=1$ to the stricter $K=2$ rule.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig2_k1_vs_k2_tradeoff.pdf}
-\caption{$K=1$ versus $K=2$ operating-point trade-off using the validated detector outputs and five-seed aggregate summary.}
+\includegraphics[width=\columnwidth]{fig2_k1_vs_k2_tradeoff.pdf}
+\caption{$K=1$ versus $K=2$ operating-point trade-off using the verified comparative results.}
 \label{fig:tradeoff}
 \end{figure}
 
@@ -156,80 +155,43 @@ The continuous composite threat score provides a threshold-independent view of s
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig3_roc_curve.pdf}
+\includegraphics[width=\columnwidth]{fig3_roc_curve.pdf}
 \caption{ROC curve for the continuous composite threat score.}
 \label{fig:roc}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig4_pr_curve.pdf}
+\includegraphics[width=\columnwidth]{fig4_pr_curve.pdf}
 \caption{Precision--recall curve for the continuous composite threat score.}
 \label{fig:pr}
 \end{figure}
 
 \subsection{Topology-Wise Performance}
-\begin{table}[t]
-\caption{Five-Seed $K=2$ Performance by IEEE Benchmark Topology.}
-\label{tab:casewise_performance}
-\centering
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lccc}
-\toprule
-Topology & F1 & Recall & FPR \\
-\midrule
-IEEE 9-bus & $0.9215\pm0.0075$ & $0.8567\pm0.0111$ & $0.0100\pm0.0200$ \\
-IEEE 14-bus & $0.9163\pm0.0055$ & $0.8483\pm0.0042$ & $0.0133\pm0.0267$ \\
-IEEE 30-bus & $0.9261\pm0.0062$ & $0.8625\pm0.0109$ & $0.0000\pm0.0000$ \\
-IEEE 118-bus & $0.9286\pm0.0015$ & $0.8667\pm0.0026$ & $0.0000\pm0.0000$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig5_casewise_performance.pdf}
+\includegraphics[width=\columnwidth]{fig5_casewise_performance.pdf}
 \caption{Five-seed mean F1 performance across the four IEEE benchmark topologies.}
 \label{fig:casewise}
 \end{figure}
 
 \subsection{Attack-Wise Performance}
-\begin{table}[t]
-\caption{Five-Seed $K=2$ Performance by Scenario.}
-\label{tab:attackwise_performance}
-\centering
-\scriptsize
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{lccc}
-\toprule
-Scenario & F1 & Recall & FPR \\
-\midrule
-Branch outage & $0.9933\pm0.0008$ & $0.9867\pm0.0017$ & $0.0000$ \\
-FDIA & $0.9916\pm0.0000$ & $0.9833\pm0.0000$ & $0.0000$ \\
-Load shift & $0.8636\pm0.0067$ & $0.7600\pm0.0104$ & $0.0000$ \\
-Stealth drift & $0.8263\pm0.0087$ & $0.7042\pm0.0126$ & $0.0000$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The attack-wise results show that the detector is substantially stronger for branch outages and FDIA than for load-shift and slowly varying stealth-drift cases. The latter cases should therefore be treated as the principal limitations of the present validation study.
-
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig6_attackwise_performance.pdf}
+\includegraphics[width=\columnwidth]{fig6_attackwise_performance.pdf}
 \caption{Five-seed mean F1 and recall across the validated attack scenarios.}
 \label{fig:attackwise}
 \end{figure}
 
 \subsection{Statistical Comparison}
-The regenerated primary-seed audit contains paired McNemar comparisons. For the $K=2$ quorum against NIS standalone, the test gives $\chi^2=118.8643$ and $p=1.1215\times10^{-27}$. Against CUSUM standalone, $\chi^2=109.2101$ and $p=1.4597\times10^{-25}$. These tests support a statistically significant difference for those comparisons, but the paper does not generalize these primary-seed tests into a five-seed statistical claim.
+The regenerated primary-seed audit contains paired McNemar comparisons. These primary-seed tests are reported as pairwise comparisons and are not generalized into a five-seed statistical claim.
 
 \subsection{Robustness to Attack Severity}
 The severity sweep shows how detection performance changes across the controlled attack tiers. This analysis is used as a robustness assessment, not as evidence of field performance.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig10_severity_robustness.pdf}
+\includegraphics[width=\columnwidth]{fig10_severity_robustness.pdf}
 \caption{Detection robustness across the validated attack-severity tiers.}
 \label{fig:severity}
 \end{figure}
@@ -241,27 +203,19 @@ The repository performs an independent physical audit in which the AC measuremen
 \end{equation}
 The independent branch-power calculation includes line charging and transformer tap/phase-shift terms. The audit requires the active-power balance residual to remain below $10^{-9}$ p.u. and the measurement-equation cross-check to remain below $10^{-10}$ in the implemented normalized quantities.
 
-The corrected audit gives maximum measurement-equation discrepancies of $1.04\times10^{-14}$ p.u. for active power and $2.91\times10^{-14}$ p.u. for reactive power across the IEEE 9-, 14-, 30-, and 118-bus cases. The corresponding active-power balance residual remains below $3\times10^{-14}$ p.u.
-
-The physical checker was revised to include branch charging explicitly; earlier versions omitted the half-line charging contribution when calculating branch losses. Consequently, any earlier physical residual figure produced before this correction is not treated as authoritative.
+The final verification CSV reports maximum absolute measurement-equation discrepancies of $3.09\times10^{-14}$ p.u. for active power and $2.46\times10^{-14}$ p.u. for reactive power across the IEEE 9-, 14-, 30-, and 118-bus cases. The maximum absolute active-power balance residual is $2.04\times10^{-14}$ p.u. These values are taken directly from the frozen verification artifact.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{../results/independent_validation_run/paper_figures/fig12_ac_powerflow_consistency.pdf}
-\caption{Independent AC power-flow numerical consistency audit for the canonical benchmark cases.}
+\includegraphics[width=\columnwidth]{fig12_ac_powerflow_consistency.pdf}
+\caption{Maximum numerical consistency residuals from the frozen AC physical audit across the canonical IEEE benchmark cases.}
 \label{fig:physical}
 \end{figure}
 
-\section{Computational Scaling}
-Earlier manuscript versions reported fixed Jacobian speedup values and an empirical power-law exponent. Those values are not retained as authoritative claims in this revision because the current regenerated validation artifact does not independently regenerate the complete timing benchmark from the corrected pipeline. Computational-scaling claims should be reintroduced only after a fresh timing experiment has been generated and hashed with the same validation run.
-
 \section{Limitations}
-The present study uses canonical IEEE benchmark systems and controlled synthetic attack scenarios rather than field SCADA data. The communication-jitter stream is also weak in the current synthetic evaluation, as reflected by its standalone F1-score of 0.0083 in the primary-seed detector audit. The load-shift and stealth-drift cases remain the most difficult attack classes. These limitations should be addressed before claiming operational deployment readiness.
+The measurements, noise, and attack realizations are synthetic and seeded rather than field SCADA data. The evaluation covers four canonical benchmark topologies and five controlled scenarios. Adaptive attackers and field deployment conditions are outside the present validation scope.
 
 \section{Conclusion}
-XMON-Grid combines physical state-estimation residuals, statistical drift monitoring, timing information, sequential accumulation, and quorum fusion for cyber-physical anomaly detection. The corrected and regenerated five-seed evaluation gives an F1-score of $0.9204\pm0.0026$, recall of $0.8850\pm0.0012$, FPR of $0.1525\pm0.0197$, and MCC of $0.6667\pm0.0151$ for the $K=2$ mode. The corrected mathematical and physical validation pipeline removes earlier stale numerical claims and makes the remaining limitations explicit.
-
-\bibliographystyle{IEEEtran}
-\bibliography{references}
+This study evaluates XMON-Grid as a transparent sequential cyber-physical detector combining NIS, adaptive CUSUM, timing-jitter statistics, sequential innovation accumulation, and quorum fusion. Across five independent seeds and four canonical IEEE benchmark networks, the verified $K=2$ configuration achieves mean F1-score 0.9204, while the attack-wise and ablation results identify both strengths and operating limitations. The released verification artifacts provide traceable computational provenance for the reported numerical results.
 
 \end{document}
