@@ -12,7 +12,41 @@ ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "results" / "independent_validation_run"
 OUT = ROOT / "results" / "paper_final_verified_20260908" / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
-plt.rcParams.update({"font.family":"DejaVu Sans","font.size":10,"axes.titlesize":12,"axes.labelsize":10,"xtick.labelsize":9,"ytick.labelsize":9,"legend.fontsize":9,"axes.grid":True,"grid.alpha":0.22,"grid.linestyle":"--","savefig.bbox":"tight"})
+plt.rcParams.update({
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42,
+    "font.family": "serif",
+    "font.serif": ["STIXGeneral", "Times New Roman", "Times"],
+    "font.size": 8.5,
+    "axes.titlesize": 9.5,
+    "axes.labelsize": 8.5,
+    "xtick.labelsize": 7.5,
+    "ytick.labelsize": 7.5,
+    "legend.fontsize": 7.5,
+    "figure.titlesize": 9.5,
+    "axes.grid": True,
+    "axes.axisbelow": True,
+    "grid.alpha": 0.20,
+    "grid.linewidth": 0.45,
+    "axes.linewidth": 0.70,
+    "lines.linewidth": 1.5,
+    "lines.markersize": 4.5,
+    "patch.linewidth": 0.7,
+    "xtick.direction": "in",
+    "ytick.direction": "in",
+    "xtick.major.width": 0.7,
+    "ytick.major.width": 0.7,
+    "legend.frameon": True,
+    "legend.framealpha": 0.92,
+    "savefig.bbox": "tight",
+    "savefig.pad_inches": 0.03,
+    "mathtext.fontset": "stix",
+    "axes.prop_cycle": __import__("cycler").cycler(
+        "color",
+        ["#0072B2", "#D55E00", "#009E73", "#CC79A7",
+         "#E69F00", "#56B4E9", "#000000"]
+    ),
+})
 
 def rd(path):
     with path.open(newline="") as f: return list(csv.DictReader(f))
