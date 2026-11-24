@@ -1,0 +1,15 @@
+cls,det,recall,median_delay,Pd
+load_shift,g,0.4479166666666667,0.0,0.825
+load_shift,th,0.41791666666666666,0.0,0.775
+load_shift,ewma,0.26,0.0,0.85
+load_shift,win,0.26375,0.0,0.8625
+load_shift,nis,0.075,0.0,0.95
+load_shift,cu,0.34458333333333335,0.0,0.5375
+load_shift,k2,0.058333333333333334,0.0,0.5375
+stealth_drift,g,0.19666666666666666,0.0,0.6375
+stealth_drift,th,0.20458333333333334,0.0,0.6125
+stealth_drift,ewma,0.1475,0.0,0.6875
+stealth_drift,win,0.1925,0.0,0.7
+stealth_drift,nis,0.049166666666666664,0.0,0.75
+stealth_drift,cu,0.13166666666666665,0.0,0.3125
+stealth_drift,k2,0.03166666666666667,0.0,0.3375

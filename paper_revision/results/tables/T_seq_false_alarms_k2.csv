@@ -1,0 +1,5 @@
+case,seqs_alarmed,startup_seqs,post_seqs,longest,runs_total,onset_min,onset_max,startup_alarms,post_alarms,alarms
+case118,5,5,0,20,5,0,0,99,0,99
+case14,5,5,1,6,19,0,0,47,1,48
+case30,1,0,1,2,4,21,21,0,7,7
+case9,5,5,0,3,17,0,0,29,0,29

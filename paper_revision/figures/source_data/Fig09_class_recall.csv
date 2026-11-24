@@ -1,0 +1,5 @@
+group,hits,n,rate
+branch_outage,239,240,0.9958333333333333
+fdia,239,240,0.9958333333333333
+load_shift,192,240,0.8
+stealth_drift,180,240,0.75

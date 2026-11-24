@@ -1,0 +1,4 @@
+metric,value
+ROC_AUC,0.9574739583333333
+PR_AUC_trapezoid,0.9837871731102182
+prevalence,0.8

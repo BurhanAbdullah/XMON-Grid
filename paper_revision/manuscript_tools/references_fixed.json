@@ -1,0 +1,94 @@
+{
+ "ops": [
+  [
+   7,
+   ", 2024, doi: ",
+   ", vol. 230, Art. no. 110294, 2024, doi: "
+  ],
+  [
+   8,
+   "Proc. IEEE PES asia-pacific power energy eng. Conf. (APPEEC)",
+   "Proc. IEEE PES Asia-Pacific Power Energy Eng. Conf. (APPEEC)"
+  ],
+  [
+   14,
+   "Proc. IEEE PES innov. Smart grid technol. Eur. (ISGT europe)",
+   "Proc. IEEE PES Innov. Smart Grid Technol. Eur. (ISGT Europe)"
+  ],
+  [
+   17,
+   "Proc. IEEE ind. Appl. Soc. Annu. Meeting (IAS)",
+   "Proc. IEEE Ind. Appl. Soc. Annu. Meeting (IAS)"
+  ],
+  [
+   18,
+   ", 2023, doi: ",
+   ", vol. 39, no. 1, pp. 1434–1446, 2024, doi: "
+  ],
+  [
+   19,
+   "Proc. IEEE int. Conf. Commun. Control comput. Technol. Smart grids (SmartGridComm)",
+   "Proc. IEEE Int. Conf. Commun. Control Comput. Technol. Smart Grids (SmartGridComm)"
+  ],
+  [
+   21,
+   "Proc. IEEE elect. Power energy conf. (EPEC)",
+   "Proc. IEEE Elect. Power Energy Conf. (EPEC)"
+  ],
+  [
+   22,
+   "Proc. IEEE power energy soc. Gen. Meeting (PESGM)",
+   "Proc. IEEE Power Energy Soc. Gen. Meeting (PESGM)"
+  ],
+  [
+   24,
+   "Proc. IEEE int. Conf. Parallel distrib. Syst. (ICPADS)",
+   "Proc. IEEE Int. Conf. Parallel Distrib. Syst. (ICPADS)"
+  ],
+  [
+   25,
+   "Proc. North amer. Power symp. (NAPS)",
+   "Proc. North Amer. Power Symp. (NAPS)"
+  ],
+  [
+   26,
+   "Proc. IEEE int. Conf. Syst. Man cybern. (SMC)",
+   "Proc. IEEE Int. Conf. Syst. Man Cybern. (SMC)"
+  ],
+  [
+   31,
+   "Proc. IEEE ind. Appl. Soc. Annu. Meeting (IAS)",
+   "Proc. IEEE Ind. Appl. Soc. Annu. Meeting (IAS)"
+  ],
+  [
+   33,
+   "Frontiers in artificial intelligence and applications",
+   "Frontiers in Artificial Intelligence and Applications"
+  ],
+  [
+   37,
+   "Proc. IEEE PES transm. Distrib. Conf. Expo. (t&d)",
+   "Proc. IEEE PES Transm. Distrib. Conf. Expo. (T&D)"
+  ],
+  [
+   38,
+   "Proc. IEEE green technol. Conf. (GreenTech)",
+   "Proc. IEEE Green Technol. Conf. (GreenTech)"
+  ],
+  [
+   39,
+   "Proc. IEEE power energy soc. Gen. Meeting (PESGM)",
+   "Proc. IEEE Power Energy Soc. Gen. Meeting (PESGM)"
+  ],
+  [
+   40,
+   "Proc. Workshop modeling simulation cyber-physical energy syst. (MSCPES)",
+   "Proc. Workshop Model. Simul. Cyber-Phys. Energy Syst. (MSCPES)"
+  ]
+ ],
+ "full": {
+  "41": "P. Krishnamurthy, A. Rasteh, R. Karri, and F. Khorrami, “Tracking real-time anomalies in cyber-physical systems through dynamic behavioral analysis,” arXiv:2406.12438, 2024.",
+  "43": "R. Lincoln, “PYPOWER: Solves power flow and optimal power flow problems,” Python package, version 5.1.19. [Online]. Available: https://github.com/rwl/PYPOWER",
+  "42": "R. D. Zimmerman, C. E. Murillo-Sánchez, and R. J. Thomas, “MATPOWER: Steady-state operations, planning, and analysis tools for power systems research and education,” //IEEE Trans. Power Syst.//, vol. 26, no. 1, pp. 12–19, 2011, doi: 10.1109/TPWRS.2010.2051168."
+ }
+}

@@ -1,0 +1,47 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Evaluation timelines" id="timeline">
+    <mxGraphModel dx="1200" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="ta" value="(a) Original protocol (all headline results)" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Times New Roman;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="a1" value="Calibration phase&lt;br&gt;200 benign samples, flat start&lt;br&gt;μ&lt;sub&gt;0&lt;/sub&gt;, σ&lt;sub&gt;0&lt;/sub&gt;, μ&lt;sub&gt;T&lt;/sub&gt;, σ&lt;sub&gt;T&lt;/sub&gt;, τ&lt;sub&gt;Θ&lt;/sub&gt;, τ&lt;sub&gt;comp&lt;/sub&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="300" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2" value="Test-sequence reset&lt;br&gt;flat-start estimator, P&lt;sub&gt;0&lt;/sub&gt;&lt;br&gt;g&lt;sub&gt;k&lt;/sub&gt;, jitter window, Θ&lt;sub&gt;k&lt;/sub&gt; = 0" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;dashed=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="60" width="230" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="a3" value="60-cycle test sequence, scored from k = 0&lt;br&gt;benign, or anomalous from k = 0 to k = 59&lt;br&gt;one scenario per sequence, no within-sequence transition" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#bdbdbd;strokeColor=#000000;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="630" y="60" width="540" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;strokeColor=#000000;" edge="1" parent="1" source="a1" target="a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;strokeColor=#000000;" edge="1" parent="1" source="a2" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="tb" value="(b) Onset experiment (Section III-F)" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Times New Roman;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="20" y="200" width="500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="b1" value="Calibration phase&lt;br&gt;same 200 samples&lt;br&gt;and moments as (a)" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="20" y="250" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="b2" value="Reset, then 30-cycle&lt;br&gt;warm-up (estimator only,&lt;br&gt;not scored)" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;dashed=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="265" y="250" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="b3" value="30 benign cycles, scored&lt;br&gt;detectors start at reset state&lt;br&gt;false alarms, ARL&lt;sub&gt;0&lt;/sub&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="510" y="250" width="290" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="b4" value="30 anomalous cycles, scored&lt;br&gt;one class and one tier&lt;br&gt;delay, P&lt;sub&gt;d&lt;/sub&gt;, ARL&lt;sub&gt;1&lt;/sub&gt;, recall" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#bdbdbd;strokeColor=#000000;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="840" y="250" width="330" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;strokeColor=#000000;" edge="1" parent="1" source="b1" target="b2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="endArrow=classic;html=1;strokeColor=#000000;" edge="1" parent="1" source="b2" target="b3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="on" value="onset" style="text;html=1;align=center;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="790" y="215" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ol" value="" style="endArrow=none;dashed=1;dashPattern=1 3;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="820" y="235" as="sourcePoint"/><mxPoint x="820" y="355" as="targetPoint"/></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,2 @@
+rule,F1,Recall,FPR
+"S_comp > per-case tau_comp, primary seed",0.9235880398671096,0.86875,0.05

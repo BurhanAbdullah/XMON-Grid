@@ -1,0 +1,5 @@
+case,gen
+case118,branch 1-2; max|V_post-V_pre|=0.00956; max|theta_post-theta_pre|=0.00884
+case14,branch 1-2; max|V_post-V_pre|=0.02603; max|theta_post-theta_pre|=0.55038
+case30,branch 1-2; max|V_post-V_pre|=0.00025; max|theta_post-theta_pre|=0.03739
+case9,branch 4-5; max|V_post-V_pre|=0.06789; max|theta_post-theta_pre|=0.20652

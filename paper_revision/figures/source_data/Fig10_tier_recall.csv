@@ -1,0 +1,5 @@
+group,hits,n,rate
+Tier 1 (Subtle),236,240,0.9833333333333333
+Tier 2 (Moderate),140,240,0.5833333333333334
+Tier 3 (Strong),234,240,0.975
+Tier 4 (Severe),240,240,1.0

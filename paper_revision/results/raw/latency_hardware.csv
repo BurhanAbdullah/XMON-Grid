@@ -1,0 +1,2 @@
+cpu,logical_cpus,ram_gb,os,python,numpy,openblas_threads
+Intel(R) Xeon(R) Processor @ 2.10GHz,2,7,Linux-6.18.44-fc-v726-x86_64-with-glibc2.39,3.13.18,1.26.4,1
